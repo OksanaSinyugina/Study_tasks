@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <div class="game__start">
+            <h1 class="game__title">Угадываю загаданное число</h1>
+            <p class="game__info">
+                Ты можешь загадать у себя в голове любое число от 0 до 100, а я отгадаю его не больше, чем за 7 попыток.
+                Все что тебе надо делать - это нажимать на кнопки "Много", "Мало", "Да". 
+                Когда ты будешь готов, то нажми кнопку "Я загадал число".
+            </p>
+            <button class="game__btn">Я загадал число</button>
+        </div>
+        <div class="game__output">
+            <div class="game__try">
+                <p class="game__try-number">Попытка № 1</p> 
+                <p class="game__guess">Это число 3?</p>
+                
+                <button class="game__btn game__btn--high">Много</button>
+                <button class="game__btn game__btn--low">Мало</button>
+                <button class="game__btn game__btn--my-number">Да</button>
+            </div>
+
+            <div class="game__try">
+                <p class="game__try-number">Попытка № 1</p> 
+                <p class="game__guess">Это число 3?</p>
+                
+                <button class="game__btn game__btn--high">Много</button>
+                <button class="game__btn game__btn--low">Мало</button>
+                <button class="game__btn game__btn--my-number">Да</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

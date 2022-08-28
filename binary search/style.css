@@ -1,0 +1,27 @@
+.game {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.game__start{
+   /* padding: 10px;*/
+}
+.game__btn{
+    background-color: black;
+    color: white;
+}
+
+.game__output{
+    margin-top: 20px
+}
+
+.game__try{
+    background: wheat;
+    padding: 10px;
+    margin: 10px 0;
+}
+.game__try-number{
+    color: grey;
+}
+.game__guess{
+    font-size: 20px;
+}
