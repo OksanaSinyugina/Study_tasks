@@ -1,6 +1,10 @@
-function binarySearch (array, number) {
+const startBtn = document.querySelector('.game__btn');
+
+
+function binarySearch (array) {
+   
     let low = 0;
-    let high = array.length - 1;
+    let high = array.length -1 ;
     let tryNumber = 1; // номер попытки
     
     let guess = array[Math.ceil((low + high)/2)]; // предполагаем загаданное число
@@ -33,8 +37,6 @@ while (arrayLength > 0) {
     numbersArray.unshift(arrayLength--)
 }
 
-console.log(numbersArray);
+startBtn.addEventListener('click', binarySearch (numbersArray));
 
-let number = 45;
-
-binarySearch (numbersArray, number);
+//binarySearch (numbersArray, number);

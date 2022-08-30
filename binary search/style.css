@@ -2,16 +2,14 @@
     max-width: 700px;
     margin: 0 auto;
 }
-.game__start{
-   /* padding: 10px;*/
-}
 .game__btn{
     background-color: black;
     color: white;
 }
 
 .game__output{
-    margin-top: 20px
+    margin-top: 20px;
+    display: none;
 }
 
 .game__try{
