@@ -1,42 +1,87 @@
 const startBtn = document.querySelector('.game__btn');
+const gameOutput = document.querySelector('.game__output');
+const gameGuess = document.querySelector('.game__guess');
+const gameTryNumber = document.querySelector('.game__try-number');
+const gamebtnHigh = document.querySelector('.game__btn--high');
+const gamebtnLow = document.querySelector('.game__btn--low');
+const gamebtnYes = document.querySelector('.game__btn--yes');
+const newGame = document.querySelector('.new-game');
+const gamebtnNewGame = document.querySelector('.game__btn--new-game');
 
+const gameData = {
+    arrayLength: 100,
+    numbersArray: [],
+    tryNumber: 0,
+    low: 0,
+    high: 0,
+    guess: 0,
+}
 
-function binarySearch (array) {
-   
-    let low = 0;
-    let high = array.length -1 ;
-    let tryNumber = 1; // номер попытки
-    
-    let guess = array[Math.ceil((low + high)/2)]; // предполагаем загаданное число
+fillArray(gameData);
 
-    while (low <= high) {
-        if (guess > number) {
-            high = array.indexOf(guess) - 1;
-            console.log(`Попытка № ${tryNumber}: ${guess} > ${number}. Диапазон от ${low} до ${high}`);
-            tryNumber +=1;
-            guess = array[Math.ceil((low + high)/2)];
-        }
-        if (guess < number) {
-            low = array.indexOf(guess) + 1;
-            console.log(`Попытка № ${tryNumber}: ${guess} < ${number}. Диапазон от ${low} до ${high}`);
-            tryNumber +=1;
-            guess = array[Math.ceil((low + high)/2)];
-        }
-        if (guess = number) {
-            console.log(`Попытка № ${tryNumber}: ${guess} = ${number}. Диапазон от ${low} до ${high}`);
-            break;
-        }
+function fillArray(object) {
+    for (let i = 0; i < object.arrayLength; i++) {
+        object.numbersArray[i] = i + 1;
     }
-
-    console.log(`C попытки № ${tryNumber}: угаданное число ${guess} = загаданное ${number} число`);
 }
 
-let arrayLength = 100;
-let numbersArray = [];
-while (arrayLength > 0) {
-    numbersArray.unshift(arrayLength--)
+startBtn.addEventListener( 'click', () => firstGuess(gameData) );
+gamebtnHigh.addEventListener( 'click', () => guessIsHigh(gameData) );
+gamebtnLow.addEventListener( 'click', () => guessIsLow(gameData) );
+gamebtnYes.addEventListener( 'click', () => guessIsYes() );
+gamebtnNewGame.addEventListener( 'click', () => anotherGame(gameData) );
+
+function showNumber(object) {
+        gameTryNumber.innerHTML = `Попытка № ${object.tryNumber}`;
+        gameGuess.innerHTML = `Это число ${object.guess}?`;
+        gameOutput.style.display = "block";
+        console.log(`${object.low} - ${object.high}`)
+        if (object.low === object.high) {
+            gamebtnHigh.disabled = true;
+            gamebtnLow.disabled = true;
+        }
+
 }
 
-startBtn.addEventListener('click', binarySearch (numbersArray));
+function firstGuess(object) {
+    ++object.tryNumber;
+    object.high = object.arrayLength - 1;
+    object.guess = object.numbersArray[Math.floor((object.low + object.high)/2)];
+    showNumber(object);
+    startBtn.disabled = true;
+    
+}
 
-//binarySearch (numbersArray, number);
+function guessIsHigh(object) {
+    ++object.tryNumber;
+    object.high = object.numbersArray.indexOf(object.guess) - 1;
+    object.guess = object.numbersArray[Math.floor((object.low + object.high)/2)];
+    showNumber(object);
+}
+
+function guessIsLow(object) {
+    ++object.tryNumber;
+    object.low = object.numbersArray.indexOf(object.guess) + 1;
+    object.guess = object.numbersArray[Math.floor((object.low + object.high)/2)];
+    showNumber(object);
+}
+
+function guessIsYes() {
+    gamebtnHigh.disabled = true;
+    gamebtnLow.disabled = true;
+    gamebtnYes.disabled = true;
+    newGame.style.display = "block";
+}
+
+function anotherGame(object) {
+    object.tryNumber = 0;
+    object.low = 0;
+    object.high = 0;
+    object.guess = 0;
+    gameOutput.style.display = "none";
+    newGame.style.display = "none";
+    startBtn.disabled = false;
+    gamebtnHigh.disabled = false;
+    gamebtnLow.disabled = false;
+    gamebtnYes.disabled = false;
+}

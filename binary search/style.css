@@ -1,25 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body{
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    background-color: #F9F7F7;
+}
 .game {
-    max-width: 700px;
+    max-width: 870px;
     margin: 0 auto;
 }
+.game__title{
+    text-align: center;
+}
+.game__info{
+    text-align: justify;
+}
 .game__btn{
-    background-color: black;
-    color: white;
+    background-color: #3F72AF;
+    color: #F9F7F7;
+    cursor: pointer;
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+}
+.game__btn--start{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 50px;
 }
 
-.game__output{
+.game__btn--high,
+.game__btn--low,
+.game__btn--yes{
+    padding: 10px 20px;
+}
+
+.game__btn--start:disabled,
+.game__btn--high:disabled,
+.game__btn--low:disabled,
+.game__btn--yes:disabled{
+    background-color: #3F72AF;
+    color: #112D4E;
+    cursor: default;
+}
+
+.game__output,
+.new-game{
     margin-top: 20px;
     display: none;
 }
 
-.game__try{
-    background: wheat;
+.game__try,
+.new-game__inner{
+    background: #DBE2EF;
     padding: 10px;
     margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.new-game__inner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .game__try-number{
-    color: grey;
+    color: #3F72AF;
 }
 .game__guess{
-    font-size: 20px;
+    max-width: 175px;
+}
+.game__btn--new-game{
+    padding: 10px 50px;
+}
+.smile{
+    height: 150px;
 }

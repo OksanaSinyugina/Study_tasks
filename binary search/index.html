@@ -10,13 +10,13 @@
 <body>
     <div class="game">
         <div class="game__start">
-            <h1 class="game__title">Угадаю твое число</h1>
+            <h1 class="game__title">Я (супер-разум) угадаю любое загаданное число!</h1>
             <p class="game__info">
                 Ты можешь загадать у себя в голове любое число от 1 до 100, а я отгадаю его не больше, чем за 7 попыток.
                 Все что тебе надо делать - это нажимать на кнопки "Много", "Мало", "Да". 
                 Когда ты будешь готов, то нажми кнопку "Я загадал число".
             </p>
-            <button class="game__btn">Я загадал число</button>
+            <button class="game__btn game__btn--start">Я загадал число</button>
         </div>
         <div class="game__output">
             <div class="game__try">
@@ -25,8 +25,17 @@
                 
                 <button class="game__btn game__btn--high">Много</button>
                 <button class="game__btn game__btn--low">Мало</button>
-                <button class="game__btn game__btn--my-number">Да</button>
+                <button class="game__btn game__btn--yes">Да</button>
             </div>            
+        </div>
+        <div class="new-game">
+            <div class="new-game__inner">
+                <div class="new-game__text">
+                    <p class="win">Я выйграл, как и планировалось!</p>
+                    <button class="game__btn game__btn--new-game">Сыграть еще раз</button>
+                </div>
+                <img class="smile" src="smile.jpg" alt="smile">
+            </div>
         </div>
     </div>
 
