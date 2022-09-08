@@ -1,0 +1,63 @@
+// переменные, должны быть написаны перед использованием 
+// Чтобы создать переменную в Sass нужно использовать символ $.
+$top-color: #4d14dd;
+$top-font: 'lato', sans-serif;
+
+// вложенность, не делать гигантские, потом сложно будет разбираться
+
+.menu {
+    float: right;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+        a {
+            text-decoration: none;
+        }
+    }
+    
+}
+
+// & - заменяет родителя
+
+.description {
+    color: $top-color;
+    &:hover {
+        color: white;
+        font-family: $top-font;
+    }
+}
+
+.tools {
+    &-description {
+        text-align: left;
+    }
+    &.item {
+        float: left;
+    }
+}
+
+%name-item {
+    font-size: 22px;
+    padding: 10px;
+    // background-color: rgba(10, 56, 174, .9);
+    background-color: rgba(#12dc10, .9);
+}
+
+.item-1 {
+    color: #ccc;
+    @extend %name-item;
+}
+
+.item-2 {
+    color: #fff;
+    @extend %name-item;
+}
+
+.item-3 {
+    color: #000;
+    @extend %name-item;
+}
