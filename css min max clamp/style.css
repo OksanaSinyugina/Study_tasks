@@ -1,0 +1,13 @@
+
+.one {
+    background: aquamarine;
+    width: min(50%, 500px);
+}
+.two{
+    background: rgb(238, 116, 197);
+    width: max(50%, 500px);
+}
+.three{
+    background: rgb(154, 231, 53);
+    width: clamp(200px, 50%, 500px);
+}
